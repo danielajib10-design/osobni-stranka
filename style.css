@@ -154,7 +154,10 @@ nav ul {
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  /* TODO */
+  .card {
+    background-color: var(--card-solid-bg);
+    backdrop-filter: none;
+  }
 }
 
 @media (forced-colors: active) {
