@@ -1,8 +1,10 @@
-
 :root {
+  color-scheme: light dark;
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
   --link-color: #0056b3;
+  --card-bg: #f9f9f9;
+  --border-color: #cccccc;
 }
 
 * {
@@ -34,9 +36,10 @@ img, table {
 }
 
 .card {
+  background-color: var(--card-bg);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  border: 0.125rem solid #cccccc;
+  border: 0.125rem solid var(--border-color);
   border-radius: 0.5rem;
 }
 
@@ -73,7 +76,11 @@ img, table {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* TODO */
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --link-color: #66b2ff;
+    --card-bg: #1e1e1e;
+    --border-color: #444444;
   }
 }
 
