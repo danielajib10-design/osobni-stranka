@@ -85,7 +85,33 @@ img, table {
 }
 
 @media (prefers-contrast: more) {
-  /* TODO */
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #0000ee;
+    --card-bg: #ffffff;
+    --border-color: #000000;
+  }
+
+  .card {
+    border-width: 0.25rem;
+    background-image: none;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --link-color: #ffff00;
+    --card-bg: #000000;
+    --border-color: #ffffff;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
