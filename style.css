@@ -11,13 +11,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: sans-serif;
   margin: 0;
   padding: 1rem;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
 }
 
 h1 { font-size: 2rem; margin-bottom: 1rem; }
@@ -28,11 +32,24 @@ p, ul, address, table, figcaption { font-size: 1rem; margin-bottom: 1rem; line-h
 a {
   color: var(--link-color);
   text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.75;
 }
 
 img, table {
   max-width: 100%;
   height: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .card {
@@ -41,7 +58,13 @@ img, table {
   margin-bottom: 1.5rem;
   border: 0.125rem solid var(--border-color);
   border-radius: 0.5rem;
+  transition: transform 0.2s ease;
 }
+
+.card:hover {
+  transform: translateY(-0.25rem);
+}
+
 
 @media (min-width: 40em) {
   nav ul {
@@ -115,7 +138,19 @@ img, table {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* TODO */
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .card:hover {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-transparency: reduce) {
